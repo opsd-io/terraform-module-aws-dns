@@ -1,21 +1,20 @@
-# Example title
+# Ohh! What does this button (module) do?
 
-Brief description of an example.
+This example shows how to create several private zones with sample entries.
 
 ## Required tools
 
-### AZ CLI
+### AWS CLI
 
-Before you start, you need to install Azure CLI according to the official [documentation](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
+Before you start, you need to install AWS CLI according to the official [documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Use the `az login` command to login to your Azure subscription.
+Use the `aws configure` command to configure CLI.
 
-### asdf and direnv
+### asdf
 
-Additinaly `asdf` and `direnv` must be installed and configured according to their official documentation.
+Additinaly `asdf` must be installed and configured according to their official documentation.
 
 - [asdf](https://asdf-vm.com/) -  manages multiple runtime versions;
-- [direnv](https://direnv.net/) - augments existing shells with a new feature that can load and unload environment variables.
 
 ### Terraform
 
@@ -28,21 +27,21 @@ asdf install terraform
 
 ## Terraforming infrastructure
 
-To start working with the module, you need to initialize terraform.
+Before we start, please review the [main.tf](main.tf) file to understand how to work with the module.
+
+Next, you need to initialize terraform
 
 ```shell
 terraform init
 ```
 
-Execute plan command.
+see the plan
 
 ```shell
 terraform plan
 ```
 
-and verify what will be created.
-
-The last step is to create the repo
+to verify what will be created. The last step is to create zone and records using command:
 
 ```shell
 terrafrorm apply
@@ -61,3 +60,9 @@ Do you want to perform these actions?
 ```
 
 Type `yes` to approve and let the magic happen.
+
+To remove prievously created resources execute
+
+```shell
+terrafrorm destroy
+```

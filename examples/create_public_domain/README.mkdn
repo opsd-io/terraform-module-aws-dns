@@ -1,0 +1,68 @@
+# Ohh! What does this button (module) do?
+
+This example shows how to create public zone with sample entries.
+
+## Required tools
+
+### AWS CLI
+
+Before you start, you need to install AWS CLI according to the official [documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+Use the `aws configure` command to configure CLI.
+
+### asdf
+
+Additinaly `asdf` must be installed and configured according to their official documentation.
+
+- [asdf](https://asdf-vm.com/) -  manages multiple runtime versions;
+
+### Terraform
+
+The suggested Terraform version is defined in the [.tool-versions](.tool-versions) file.
+To install it, simply execute
+
+```bash
+asdf install terraform
+```
+
+## Terraforming infrastructure
+
+Before we start, please review the [main.tf](main.tf) file to understand how to work with the module.
+
+Next, you need to initialize terraform
+
+```shell
+terraform init
+```
+
+see the plan
+
+```shell
+terraform plan
+```
+
+to verify what will be created. The last step is to create zone and records using command:
+
+```shell
+terrafrorm apply
+```
+
+**IMPORTANT**: Please double-check the command output. The vital section can be seen in the example `Plan: 6 to add, 0 to change, 0 to destroy`. Ensure that you understand the changes you are making.
+
+Next, you will be asked
+
+```shell
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+```
+
+Type `yes` to approve and let the magic happen.
+
+To remove prievously created resources execute
+
+```shell
+terrafrorm destroy
+```
